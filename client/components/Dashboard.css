@@ -1,0 +1,177 @@
+/* --- إعدادات عامة لضمان استغلال كامل مساحة المتصفح --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 1. حاوية لوحة النتائج (واسعة ومريحة) --- */
+.dashboard-wrapper {
+  background-color: #f0f4f8; 
+  min-height: 100vh;
+  width: 100%; /* تملأ كامل عرض المتصفح */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* زيادة عرض الحاوية البيضاء للنتائج لأقصى حد */
+.dashboard-container {
+  background: #ffffff;
+  width: 98%; /* استغلال 98% من عرض الشاشة */
+  max-width: 1600px; /* زيادة الحد الأقصى لتناسب الشاشات العريضة جداً */
+  margin: 0 auto;
+  padding: clamp(15px, 3vw, 40px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* --- تنسيق قسم الهيدر (رأس الصفحة) والشعار --- */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.dash-logo {
+  width: 250px; /* تحديد عرض ثابت وأنيق للشعار */
+  max-width: 100%; /* لضمان عدم خروجه عن الشاشة في الجوال */
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto; /* لضمان تمركزه في المنتصف تماماً */
+  margin-right: auto;
+}
+
+.dashboard-header h1 {
+  color: #1a237e; /* الكحلي الرسمي لمدارس الأندلس */
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* جعل الرسم البياني يمتد بعرض الحاوية الجديد */
+/* --- قسم الرسم البياني --- */
+.chart-section {
+  width: 100%;
+  height: 480px; /* ارتفاع ثابت يمنع التداخل */
+  margin-top: 20px;
+  margin-bottom: 70px; /* 👈 السر هنا: مسافة سفلية كبيرة لإبعاد الكروت */
+}
+
+/* توزيع الكروت بشكل عرضي واسع */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #eef2f6;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.avg-text {
+  font-size: 2.8rem; /* تكبير الخط ليتناسب مع العرض الجديد */
+  font-weight: bold;
+  color: #1a237e;
+  display: block;
+}
+
+/* --- 2. شاشة الدخول (منفصلة تماماً لضمان عدم تعطلها) --- */
+.login-wrapper {
+  background-color: #f0f4f8;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed; /* لضمان تمركزها التام */
+  top: 0;
+  left: 0;
+}
+
+.login-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 380px; /* عرض ثابت وأنيق لشاشة الدخول فقط */
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login-logo {
+  width: 130px; /* شعار أصغر لشاشة الدخول */
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a237e;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- استجابة الشاشات الصغيرة --- */
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 96%;
+    padding: 20px 10px;
+  }
+}
+/* تعديل الحاوية لتقليل العرض الزائد وجعلها مركزة */
+.dashboard-container {
+  background: #ffffff;
+  width: 90%; /* تم التقليل من 98% */
+  max-width: 1000px; /* تم التقليل من 1600px ليكون العرض مثالياً وملموماً */
+  margin: 0 auto;
+  padding: clamp(15px, 3vw, 40px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* --- تنسيق زر تصدير الإكسل --- */
+.export-excel-btn {
+  background-color: #217346; /* لون الإكسل الأخضر الرسمي */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.export-excel-btn:hover {
+  background-color: #1a5c38;
+  transform: translateY(-2px);
+}
