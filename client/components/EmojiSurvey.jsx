@@ -79,13 +79,14 @@ const EmojiSurvey = () => {
     if (currentQuestionIndex > 0) setCurrentQuestionIndex(prev => prev - 1);
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     if (Object.values(ratings).includes(null)) return;
     
     setIsSubmitting(true);
     try {
-      await axios.post('https://andalus-surveys.onrender.com/api/evaluations', surveyData);
+      // ✅ تم التعديل هنا: استخدمنا ratings بدلاً من surveyData
+      await axios.post('https://andalus-surveys.onrender.com/api/evaluations', ratings);
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting:', error);
