@@ -66,13 +66,13 @@ const Dashboard = () => {
     if (isAuthenticated) {
       const fetchData = async () => {
         try {
-         axios.get('https://andalus-surveys.onrender.com'/api/evaluations);
+         // ✅ تم إصلاح علامة التنصيص ليصبح الرابط قطعة واحدة متصلة
+         const response = await axios.get('https://andalus-surveys.onrender.com/api/evaluations');
           processData(response.data);
         } catch (error) {
           console.error("Error fetching data:", error);
         }
       };
-      fetchData();
     }
   }, [isAuthenticated]);
 

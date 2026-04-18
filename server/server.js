@@ -9,14 +9,9 @@ const app = express();
 
 // Middlewares
 // Middlewares
-app.use(cors({
-    origin: [
-        'http://localhost:5173', // للسماح بالتجارب على جهازك
-        'https://andalus-surveys.vercel.app' // للسماح للموقع المرفوع بالعمل
-    ], 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+// Middlewares
+// ✅ تم تبسيط السماح ليعمل مع أي استضافة بدون قيود مزعجة
+app.use(cors());
 app.use(express.json());
 
 /**
