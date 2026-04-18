@@ -66,7 +66,7 @@ const Dashboard = () => {
     if (isAuthenticated) {
       const fetchData = async () => {
         try {
-         axios.get('https://andalus-surveys.onrender.com');
+         axios.get('https://andalus-surveys.onrender.com'/api/evaluations);
           processData(response.data);
         } catch (error) {
           console.error("Error fetching data:", error);
