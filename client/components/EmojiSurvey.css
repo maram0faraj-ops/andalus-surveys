@@ -221,8 +221,8 @@
 
   /* تكبير الوجوه التعبيرية داخل الأزرار */
   .custom-emoji {
-    width: 60px !important;
-    height: 60px !important;
+    width: 75px !important;
+    height: 75px !important;
   }
 
   /* زيادة المسافة بين الوجوه لكي لا تتداخل */
