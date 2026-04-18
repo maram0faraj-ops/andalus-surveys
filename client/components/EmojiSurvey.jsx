@@ -85,7 +85,7 @@ const EmojiSurvey = () => {
     
     setIsSubmitting(true);
     try {
-      await axios.post('http://localhost:5000/api/evaluations', ratings);
+      await axios.post('https://andalus-surveys.onrender.com/api/evaluations', surveyData);
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting:', error);

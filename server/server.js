@@ -8,7 +8,15 @@ const Evaluation = require('./models/Evaluation');
 const app = express();
 
 // Middlewares
-app.use(cors());
+// Middlewares
+app.use(cors({
+    origin: [
+        'http://localhost:5173', // للسماح بالتجارب على جهازك
+        'https://andalus-surveys.vercel.app' // للسماح للموقع المرفوع بالعمل
+    ], 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use(express.json());
 
 /**
