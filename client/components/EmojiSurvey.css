@@ -205,28 +205,28 @@
 
 /* --- تنسيقات خاصة بشاشات الجوال فقط --- */
 @media (max-width: 768px) {
-  /* تصغير خط السؤال */
+  /* تصغير خط السؤال ليكون مرتباً */
   .question-text {
-    font-size: 1.2rem !important; /* يمكنك تقليل الرقم إلى 1.1 إذا رغبتِ بخط أصغر */
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 1.1rem !important; 
+    line-height: 1.5 !important;
+    margin-bottom: 25px !important;
   }
 
-  /* تصغير الأزرار الحاوية للرموز */
+  /* تكبير الأزرار (الدوائر) بشكل ملحوظ */
   .emoji-btn {
-    width: 55px !important;
-    height: 55px !important;
+    width: 75px !important;
+    height: 75px !important;
     padding: 8px !important;
   }
 
-  /* تصغير الرموز التعبيرية (الـ SVG) نفسها */
+  /* تكبير الوجوه التعبيرية داخل الأزرار */
   .custom-emoji {
-    width: 40px !important;
-    height: 40px !important;
+    width: 60px !important;
+    height: 60px !important;
   }
 
-  /* تقليل المسافة بين الرموز لتناسب الشاشة */
+  /* زيادة المسافة بين الوجوه لكي لا تتداخل */
   .emojis-wrapper {
-    gap: 10px !important;
+    gap: 15px !important;
   }
 }
